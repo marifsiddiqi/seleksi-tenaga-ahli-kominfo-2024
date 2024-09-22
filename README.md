@@ -1,64 +1,160 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<h1>Seleksi Tenaga Ahli Diskominfo Jatim</h1>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<h2>Table of Contents</h2>
+<ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#running-the-project">Running the Project</a></li>
+    <li><a href="#api-endpoints">API Endpoints</a>
+        <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#orders">Orders</a></li>
+        </ul>
+    </li>
+    <li><a href="#testing-api-with-postman">Testing API with Postman</a></li>
+</ul>
 
-## About Laravel
+<h2 id="introduction">Introduction</h2>
+<p>This is a simple API built using <strong>Laravel 9</strong> for managing products and orders.</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h2 id="requirements">Requirements</h2>
+<p>Ensure that the following software is installed on your machine:</p>
+<ul>
+    <li>PHP >= 8.0</li>
+    <li>Composer : <a href="https://getcomposer.org/download/">https://getcomposer.org/download/</a></p></li>
+    <li>MySQL database</li>
+    <li>Xampp : <a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.0.28/">https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.0.28/</a></p></li>
+    <li>Postman (for testing the API)</li>
+</ul>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h2 id="installation">Installation</h2>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<ol>
+    <li><strong>Clone the Repository</strong>
+        <pre>
+        git clone https://github.com/username/your-repo.git
+        cd your-repo
+        </pre>
+    </li>
+    <li><strong>Install Composer Dependencies</strong>
+        <pre>
+        composer install
+        </pre>
+    </li>
+    <li><strong>Set Up Environment Variables</strong>
+        <p>Copy the example .env file:</p>
+        <pre>
+        cp .env.example .env
+        </pre>
+        <p>Open the .env file in any text editor and configure the database settings:</p>
+        <pre>
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=your_database_name
+        DB_USERNAME=your_database_user
+        DB_PASSWORD=your_database_password
+        </pre>
+    </li>
+    <li><strong>Generate Application Key</strong>
+        <pre>
+        php artisan key:generate
+        </pre>
+    </li>
+    <li><strong>Run Database Migrations</strong>
+        <pre>
+        php artisan migrate
+        </pre>
+    </li>
+</ol>
 
-## Learning Laravel
+<h2 id="running-the-project">Running the Project</h2>
+<ol>
+    <li>Start the Laravel development server:
+        <pre>
+        php artisan serve
+        </pre>
+    </li>
+    <li>The API will be running at <code>http://127.0.0.1:8000</code>. You can now test the endpoints using <strong>Postman</strong>.</li>
+</ol>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<h2 id="api-endpoints">API Endpoints</h2>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<h3 id="products">List Products</h3>
+<ul>
+    <li><strong>Method:</strong> GET</li>
+    <li><strong>URL:</strong> /api/products</li>
+</ul>
 
-## Laravel Sponsors
+<h3 id="products">Create Products</h3>
+<ul>
+    <li><strong>Method:</strong> POST</li>
+    <li><strong>URL:</strong> /api/products</li>
+</ul>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<h3 id="products">Detail Products</h3>
+<ul>
+    <li><strong>Method:</strong> GET</li>
+    <li><strong>URL:</strong> /api/products/{id}</li>
+</ul>
 
-### Premium Partners
+<h3 id="products">Update Products</h3>
+<ul>
+    <li><strong>Method:</strong> PUT</li>
+    <li><strong>URL:</strong> /api/products/{id}</li>
+</ul>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<h3 id="products">Delete Products</h3>
+<ul>
+    <li><strong>Method:</strong> DELETE</li>
+    <li><strong>URL:</strong> /api/products/{id}</li>
+</ul>
 
-## Contributing
+<h3 id="orders">List Orders</h3>
+<ul>
+    <li><strong>Method:</strong> GET</li>
+    <li><strong>URL:</strong> /api/orders</li>
+</ul>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<h3 id="create-order">Create Order</h3>
+<ul>
+    <li><strong>Method:</strong> POST</li>
+    <li><strong>URL:</strong> /api/orders</li>
+</ul>
 
-## Code of Conduct
+<h3 id="orders">Detail Orders</h3>
+<ul>
+    <li><strong>Method:</strong> GET</li>
+    <li><strong>URL:</strong> /api/orders/{id}</li>
+</ul>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<h3 id="delete-order">Delete Order</h3>
+<ul>
+    <li><strong>Method:</strong> DELETE</li>
+    <li><strong>URL:</strong> /api/orders/{id}</li>
+</ul>
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h2 id="testing-api-with-postman">Testing API with Postman</h2>
+<ol>
+    <li><strong>Install Postman</strong>
+        <p>Download and install Postman from the official website: <a href="https://www.postman.com/downloads/">https://www.postman.com/downloads/</a></p>
+    </li>
+    <li><strong>Open Postman</strong>
+        <p>Once Postman is installed, open the application.</p>
+    </li>
+    <li><strong>Create a New Request</strong>
+        <p>To test the API, create a new request in Postman by clicking the <strong>New</strong> button and selecting <strong>HTTP Request</strong>.</p>
+    </li>
+    <li><strong>Set the Request Method and URL</strong>
+        <p>For example, to list all products:</p>
+        <pre>
+Set method to GET
+Set URL to http://127.0.0.1:8000/api/products
+        </pre>
+        <p>Then, click <strong>Send</strong>.</p>
+    </li>
+    <li><strong>Check the Response</strong>
+        <p>You should see a response similar to the one described in the <a href="#list-products">List Products</a> section. If the API returns the expected data, it means your API is working correctly.</p>
+    </li>
+</ol>
