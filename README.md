@@ -76,6 +76,7 @@
         php artisan serve
         </pre>
     </li>
+    <li>Turn on your Apache and MySQL in Xampp</li>
     <li>The API will be running at <code>http://127.0.0.1:8000</code>. You can now test the endpoints using <strong>Postman</strong>.</li>
 </ol>
 
